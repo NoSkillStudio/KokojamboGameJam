@@ -91,7 +91,6 @@ public class RocketGun : WeaponBase
         animator.SetTrigger("Hide");
         OnShot.Invoke();
         canShoot = false;
-        Debug.Log(scrolInt);
         if (decorRocket.CurrentRocket == RocketType.Rocket)
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         if (decorRocket.CurrentRocket == RocketType.HomingMissile)
