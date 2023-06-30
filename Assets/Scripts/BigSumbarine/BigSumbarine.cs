@@ -1,10 +1,7 @@
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class BigSumbarine : WeaponBase
 {
-    //[SerializeField] private float damageRange;
     [SerializeField] private LayerMask enemyMask;
 
     [SerializeField] private Vector2 attackSize;
@@ -20,8 +17,6 @@ public class BigSumbarine : WeaponBase
     [SerializeField] protected float timeBetweenShots;
     protected float nextShotTime;
 
-
-
     private void Start()
     {
         bulletPrefab.GetComponent<HomingMissile>().Damage = damage;
@@ -29,7 +24,6 @@ public class BigSumbarine : WeaponBase
 
     private void Update()
     {
-        //Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, damageRange, playerMask);
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, attackSize, 0, enemyMask);
         foreach (var enemyObject in hitObjects)
         {
@@ -75,10 +69,4 @@ public class BigSumbarine : WeaponBase
     {
         target = transform;
     }
-
-    //private void OnDrawGizmosSelected()
-    //{
-    //    Gizmos.DrawWireSphere(firePoint.position, attackRange);
-    //    Gizmos.DrawCube(transform.position, attackSize);
-    //}
 }

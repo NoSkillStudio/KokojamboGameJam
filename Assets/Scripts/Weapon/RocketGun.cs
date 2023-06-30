@@ -50,11 +50,12 @@ public class RocketGun : WeaponBase
         {
             animator.enabled = true;
         }
-
+        /*
         if (decorRocket.CurrentRocket == RocketType.Rocket)
         {
 
         }
+        */
 
         if (scrolInt != previousScrolInt)
         {

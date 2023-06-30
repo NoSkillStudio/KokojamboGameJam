@@ -41,7 +41,5 @@ public class Enemy : MonoBehaviour
     private void OnMouseDown()
     {
         rocketGun.SetTarget(transform);
-        Debug.Log("asdfghj");
     }
-
 }

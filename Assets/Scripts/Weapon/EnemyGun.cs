@@ -19,10 +19,6 @@ public class EnemyGun : WeaponBase
     private Vector3 targetPosition;
 
     [SerializeField] private UnityEvent OnShot;
-    private void Start()
-    {
-
-    }
 
     private void Update()
     {
@@ -60,24 +56,6 @@ public class EnemyGun : WeaponBase
                 animator.SetTrigger("Shoot");
                 nextShotTime = Time.time + timeBetweenShots;
             }
-
-            //if (targetPosition.x < 0)
-            //{
-            //    aI.Rotate(targetPosition);
-            //    if (transform.rotation.eulerAngles.y == 180)
-            //        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + 180f /* изменить!!! */, Mathf.Atan2(targetPosition.y - transform.position.y, targetPosition.x - transform.position.x) * Mathf.Rad2Deg);
-            //    else transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, Mathf.Atan2(targetPosition.y - transform.position.y, targetPosition.x - transform.position.x) * Mathf.Rad2Deg);
-            //    transform.localScale = new Vector3(1f, -1f, 1f);
-            //}
-            //else if (targetPosition.x > 0)
-            //{
-            //    player.Rotate(targetPosition);
-            //    if (transform.rotation.eulerAngles.y == 180f)
-            //        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y - 180f, Mathf.Atan2(targetPosition.y - transform.position.y, targetPosition.x - transform.position.x) * Mathf.Rad2Deg);
-            //    else transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, Mathf.Atan2(targetPosition.y - transform.position.y, targetPosition.x - transform.position.x) * Mathf.Rad2Deg);
-            //    transform.localScale = new Vector3(1f, 1f, 1f);
-            //}
-
         }
     }
 
@@ -92,5 +70,3 @@ public class EnemyGun : WeaponBase
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
-
-

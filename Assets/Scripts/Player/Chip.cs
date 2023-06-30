@@ -13,16 +13,13 @@ public class Chip : MonoBehaviour
         spriteRenderer.sprite = GetRandomSprites(sprites);
     }
 
-    private void Update()
-    {
-
-    }
     private Sprite GetRandomSprites(Sprite[] transformPoints)
     {
         int index;
         index = Random.Range(0, transformPoints.Length);
         return transformPoints[index];
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out ChipPicicker player))

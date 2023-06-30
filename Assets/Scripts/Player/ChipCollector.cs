@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,14 +8,6 @@ public class ChipCollector : MonoBehaviour
 
     [SerializeField] private UnityEvent<int> PichCountChanged;
     [SerializeField] private UnityEvent OnMax;
-    private void Start()
-    {
-
-    }
-
-    private void Update()
-    {
-    }
 
     private void OnEnable()
     {
@@ -34,12 +24,10 @@ public class ChipCollector : MonoBehaviour
         chips++;
         if (chips == maxChips)
         {
-            Debug.Log("MAX");
             OnMax.Invoke();
         }
         else
         {
-            
             PichCountChanged.Invoke(chips);
         }
     }

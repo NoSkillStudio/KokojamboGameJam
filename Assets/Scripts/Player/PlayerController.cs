@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     private float _speed;
 
     [SerializeField] private float _startSpeed;
+    private SpriteRenderer _renderer;
     private Vector2 _axis;
     private Rigidbody2D _rb;
     private bool isFasingRight = true;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _speed = _startSpeed;
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -21,21 +23,14 @@ public class PlayerController : MonoBehaviour
         _axis.x = Input.GetAxisRaw("Horizontal");
         _axis.y = Input.GetAxisRaw("Vertical");
 
-        if (_axis.x == 1 && !isFasingRight)
+        if (_axis.x == 1)
         {
-            Turn();
+            _renderer.flipX = false;
         }
-        else if (_axis.x == -1 && isFasingRight)
+        else if (_axis.x == -1)
         {
-            Turn();
+            _renderer.flipX = true;
         }
-    }
-
-    private void Turn()
-    {
-        isFasingRight = !isFasingRight;
-
-        transform.Rotate(0,180f,0);
     }
 
     private void FixedUpdate()

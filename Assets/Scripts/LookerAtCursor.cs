@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LookerAtCursor : MonoBehaviour
@@ -14,8 +12,14 @@ public class LookerAtCursor : MonoBehaviour
             Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             float rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, rotateZ + offset);
+            if (transform.rotation.z > -1 && transform.rotation.z < -0.5)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
             if (transform.rotation.z < 0)
+            {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
         }
         else transform.rotation = Quaternion.Euler(0,0,0);
     }

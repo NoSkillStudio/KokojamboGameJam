@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HomingMissile : MonoBehaviour
@@ -26,7 +24,7 @@ public class HomingMissile : MonoBehaviour
         if (target == null)
         {
             Destroy(gameObject);
-            Debug.Log("Выбери цель");
+            Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ");
         }
 
         if (target != null)

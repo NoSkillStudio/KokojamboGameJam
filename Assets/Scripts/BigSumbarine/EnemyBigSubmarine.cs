@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyBigSumbarine : WeaponBase
 {
-    //[SerializeField] private float damageRange;
     [SerializeField] private LayerMask playerMask;
 
     [SerializeField] private float attackRange;
@@ -36,7 +35,6 @@ public class EnemyBigSumbarine : WeaponBase
         foreach (Collider2D playerObject in hitObjects)
         {
             currentDistance = Vector2.Distance(transform.position, playerObject.GetComponent<Transform>().transform.position);
-
             if (currentDistance < nearestEnemyDistance)
             {
                 nearestEnemy = playerObject.GetComponent<Transform>().transform;

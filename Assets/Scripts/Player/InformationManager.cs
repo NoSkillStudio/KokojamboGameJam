@@ -6,9 +6,7 @@ using UnityEngine.Events;
 
 public class InformationManager : MonoBehaviour
 {
-    //[SerializeField] private TMP_Text nameText;
     [SerializeField] private TMP_Text informationText;
-    //[SerializeField] NameWindow nameWindow;
     private Queue<string> sentenses;
     private int numberOfLetters = 0;
     [SerializeField] private float timeBetweenLetters;
@@ -25,13 +23,12 @@ public class InformationManager : MonoBehaviour
     public void ShowInformation(Information information)
     {
         sentenses.Clear();
-        //nameText.text = information.name;
 
         foreach (string sentence in information.sentences)
         {
             sentenses.Enqueue(sentence);
         }
-        //nameWindow.SetWight(information.name.ToCharArray());
+
         DisplayNextSentence();
     }
 
@@ -74,9 +71,6 @@ public class InformationManager : MonoBehaviour
             }
 
         }
-
-        //NewLine.Invoke();
-
         EndWriting.Invoke();
     }
 
@@ -84,15 +78,8 @@ public class InformationManager : MonoBehaviour
     {
         StopAllCoroutines();
         informationText.text = "";
-        //nameText.text = "";
     }
 
-    //public char[] CharsInName(Room information)
-    //{
-    //    return information.name.ToCharArray();
-    //}
-
     public void SetWritingSpeed(float value) => timeBetweenLetters = value;
-
     private void InvokeEndWriting() => EndWriting.Invoke();
 }

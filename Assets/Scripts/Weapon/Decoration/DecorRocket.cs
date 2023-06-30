@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -32,10 +30,16 @@ public class DecorRocket : MonoBehaviour
             Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             float rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, rotateZ + offset);
-            if(transform.rotation.z < 0)
+
+            if (transform.rotation.z > -1 && transform.rotation.z < -0.5)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
+            else if(transform.rotation.z < 0)
+            {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
-            //else if (transform.rotation.z > 180)
-            //    transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
+            
         }
     }
     public void SwitchDecorRocket()

@@ -1,6 +1,3 @@
-using Pathfinding;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,15 +16,13 @@ public class Manipulators : MonoBehaviour
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, range, chipMask);
         foreach (var chip in hitObjects)
         {
-                animator.SetTrigger("Show");
+            animator.SetTrigger("Show");
         }
 
-        
         if(canUp == true && Input.GetKeyDown(KeyCode.E))
         {
             animator.SetTrigger("Work");
         }
-            
     }
 
     public void ActivateUp() => canUp = true;

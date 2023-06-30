@@ -24,9 +24,4 @@ public class Rocket : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
-    //private void Deactivate()
-    //{
-    //    gameObject.SetActive(false);
-    //}
 }

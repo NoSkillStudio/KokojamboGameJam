@@ -12,11 +12,6 @@ public class EnemySpawner : MonoBehaviour
 		Spawn();
 	}
 
-	private void Update()
-	{
-		
-	}
-
     private Transform GetRandomTransform(Transform[] transformPoints)
     {
         int index;
