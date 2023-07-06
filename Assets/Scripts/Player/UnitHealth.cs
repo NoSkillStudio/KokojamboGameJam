@@ -11,12 +11,12 @@ public class UnitHealth : MonoBehaviour, IDamageable
 
     private bool alive = true;
 
-    private Animator animator;
+    private Animator _animator;
 
     private void Start()
     {
         health = maxHealth;
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     public void ApplyDamage(int damageValue)
@@ -31,7 +31,7 @@ public class UnitHealth : MonoBehaviour, IDamageable
     public virtual void Die()
     {
         alive = false;
-        animator.SetTrigger("Explose");
+        _animator.SetTrigger("Explose");
     }
 
     public void Delete() => Destroy(gameObject);
